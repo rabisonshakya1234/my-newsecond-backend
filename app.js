@@ -22,7 +22,7 @@ const verifyJwt = require("./app/middleware/verifyJWT");
 
 mongoose.connect(
   process.env.DATABASE_URL,
-  { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false},
+  { useNewUrlParser: true},
 
   () => {
     console.log("Connected to DB!");
