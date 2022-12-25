@@ -4,7 +4,7 @@ require('dotenv').config();
 
 exports.store = async (req, res) => {
     try {
-        const hashedPwd = await bcrypt.hash(process.env.DEFAULT_PASSWORD, 10);
+        const hashedPwd = await bcrypt.hash(req.body.password || process.env.DEFAULT_PASSWORD, 10);
         const user = await User.create({
             ...req.body,
             'password': hashedPwd
